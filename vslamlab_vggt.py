@@ -365,7 +365,8 @@ def main():
     --conf_threshold: Initial percentage of low-confidence points to filter out
     --mask_sky: Apply sky segmentation to filter out sky points
     """
-    args = parser.parse_args()
+
+    args, unknown = parser.parse_known_args()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
 
